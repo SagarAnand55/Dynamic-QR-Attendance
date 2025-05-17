@@ -1,0 +1,582 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #007ea7;
+    height: 90vh;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    padding-top: 0.1vh;
+}
+.back{
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0)), url('../images/IIIT-Raichur-Transit-Campus\ \(1\).jpg') center center no-repeat;
+    background-size:cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1; 
+    position: fixed; /* Fixed positioning to keep background stable */
+    }
+.nav{
+    height: 60px;
+    color: #00171f;
+    background-color: white;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed;
+    z-index: 1000; /* Higher z-index to ensure it stays above all other elements */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for separation */
+    margin: 0;
+}
+.nav-logo img{
+    height: 60px;
+    width: auto;
+    padding: 8px;
+    cursor: pointer;
+}
+.menu{
+    padding: 20px;
+    height: 100%px;
+    width: 150px;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.menu i{
+    padding:1vh;
+    font-size: 1rem;
+
+}
+.menu:hover{
+    display: block;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #003459;
+    border-radius: 10px;
+    width: 120px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+.dropdown li:hover{
+    display: block;
+}
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown li {
+    padding: 10px;
+    border-top: 2px solid #fff;
+}
+.dropdown li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+.dropdown li:hover {
+    background-color: #003542;
+}
+.menu:hover .dropdown,
+.menu:focus-within .dropdown,
+.dropdown:hover {
+    display: block;
+}
+.log-out{
+    padding: 20px;
+    color: #00171f;
+    cursor: pointer;
+}
+.log-out a{
+    color: #00171f;
+    text-decoration: none;
+}
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 10vh;
+    z-index: 1; /* Ensure it appears above the background */
+    margin-top: 15vh; /* Increased top margin for better placement */
+}
+
+.head-search{
+    text-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+color: black;
+background-color:#00171f;
+display: flex;
+width: 80%;
+height: 5vh;
+border-radius: 5px;
+justify-content: space-evenly;
+background-color: rgba(0, 23, 31, 0.85); /* Darker color with transparency */
+}
+.search-select{
+background-color: #f3f3f3;
+width:10%;
+text-align: center;
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;
+border: none;;
+font-size: 1.2rem;
+cursor: pointer;
+}
+.search-input{
+width: 100%;
+font-size: 1.5rem;
+border: none;
+padding-left: 2vh;
+}
+.search-icon{
+display: flex;
+color:#00171f;
+background-color:#00171f;
+width: 7vh;
+border-radius: 5px;
+border: none;
+opacity:1;
+justify-content: center;
+}
+#submit{
+    cursor: pointer;
+    width: 100%;
+    background-color: #00171f;
+    border-radius: 5px;
+    color: white;
+}
+#attendance-list {
+   width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(223, 236, 236, 0.8);
+    border-radius: 15px;
+    color:#003459;
+    text-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    /* margin-bottom: 50px; */
+    padding:2vh;
+}
+#attendance-list th, #attendance-list td {
+    padding: 2vh;
+    border: 1px solid #ddd;
+    /* border-radius: 5px; */
+    text-align: left;
+}
+#attendance-list th {
+    background-color: #f2f2f2;
+}
+#attendance-list tr:hover {
+    background-color: rgba(0, 23, 31, 0.05);
+}
+
+#attendance-list button {
+    background-color: #00171f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#attendance-list button:hover {
+    background-color: #003459;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.attendance-details {
+    display: none;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.attendance-details h4 {
+    color: #003459;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.attendance-details p {
+    margin: 8px 0;
+    color: #00171f;
+    font-size: 0.95rem;
+}
+
+.attendance-details hr {
+    border: none;
+    height: 1px;
+    background-color: rgba(0, 23, 31, 0.2);
+    margin: 15px 0;
+}
+.heading h1 {
+    color: #00171f;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+/* Container for Course Info and Button */
+.class-info-container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the container */
+}
+
+/* Course Information Section */
+.class-info {
+    background: linear-gradient(135deg, #e0f7fa, #80deea); /* Gradient background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for spacing */
+    flex: 1; /* Allow the course info to grow */
+    margin-right: 20px; /* Space between course info and button */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.class-info:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.class-info h2 {
+    font-size: 1.8em; /* Larger font size for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+    color: #00796b; /* Dark teal color for the heading */
+    text-align: center; /* Center the heading */
+    text-transform: uppercase; /* Uppercase for emphasis */
+}
+
+.class-info p {
+    font-size: 1.1em; /* Slightly larger font size for paragraphs */
+    margin: 8px 0; /* Space between paragraphs */
+    color: #004d40; /* Darker teal color for text */
+    line-height: 1.5; /* Increased line height for readability */
+}
+
+.class-info strong {
+    color: #000; /* Bold text color for labels */
+    font-weight: bold; /* Ensure strong text is bold */
+}
+
+/* Button Style */
+.action-button {
+    background-color: #00796b; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for button */
+    font-size: 1em; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.attendance-editor {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.status-dropdown {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-edit {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-edit:hover {
+    background-color: #0056b3;
+}
+
+
+.action-button:hover {
+    background-color: #004d40; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .class-info {
+        margin-right: 0; /* Remove margin on smaller screens */
+        margin-bottom: 10px; /* Add space below on smaller screens */
+    }
+
+    .class-info-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+}
+
+.class-button {
+    margin: 20px 0; /* Space above and below the button */
+    text-align: center; /* Center the button */
+}
+
+.btn {
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.btn i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.btn:active {
+    transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+.heading h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #00171f, #003459);
+    border-radius: 2px;
+}
+.help{
+    z-index: 0;
+    margin-bottom: 0;
+    color: #222f3d;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+}
+.help i {
+    font-size: 1.3vh;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.help i:hover {
+    transform: scale(1.1); /* Zoom in effect */
+}
+.help a:hover {
+    transform: scale(1.1); /* Zoom in effect */
+}
+.help a{
+    text-decoration: none;
+    color: #222f3d;
+} 
+.footpanel3{
+    margin-bottom: 0;
+    background-color: white;
+    color:#222f3d;
+    border-top: 0.5px solid white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+.logo{
+    background-image: url(../images/logo-blue-desktop.png);
+    height: 50px;
+    width: 270px;
+    background-size: cover;
+}
+
+    .logo img{
+        max-height: 80px;
+        width: auto;
+    } 
+.footpanel4{
+    z-index: 0;
+    background-color: #0f1111;
+    color: white;
+    height: 100px;
+    font-size: 0.75rem;
+    text-align: center;
+     cursor: pointer;
+    margin-bottom: 0;
+}
+.pages{
+    font-size: 0.75rem;
+    text-align: center;
+    padding-top: 25px;
+    background-color: #00171f;
+    height: 5vh;
+    color: white;
+}
+.copyright{
+    display: flex;
+    font-size: 0.75rem;
+    justify-content: center; 
+    align-items: center;
+    background-color: #00171f;
+    height: 5vh;
+    color: white;
+}
+
+html, body {
+    height: 100%; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; 
+}
+
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Attendance Details Styling */
+.details-row {
+    background-color: #f8f9fa;
+}
+
+.attendance-details-container {
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.attendance-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-item {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.summary-value {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #003459;
+    margin-bottom: 5px;
+}
+
+.summary-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.attendance-records {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.record-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.record-date {
+    min-width: 80px;
+    font-weight: 500;
+    color: #003459;
+}
+
+.record-topic {
+    flex-grow: 1;
+    color: #444;
+}
+
+.record-duration {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.record-status {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
+}
+
+.record-status.present {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.record-status.absent {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Animation for smooth transitions */
+.details-row {
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for records */
+.record-item:hover {
+    background-color: #f1f3f5;
+}

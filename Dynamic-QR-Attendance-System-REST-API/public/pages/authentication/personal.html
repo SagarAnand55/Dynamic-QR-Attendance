@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Profile</title>
+    <link rel="stylesheet" href="../../css/personal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-logo">
+            <a href="../../index.html">
+                <img src="../../images/logo-blue-desktop.png" alt="Logo"/>
+            </a>
+        </div>
+        <div class="log-out">
+            <a href="sign_in.html">Sign Out <i class="fa-duotone fa-solid fa-right-from-bracket"></i></a>
+        </div>
+    </div>
+
+    <div class="details">
+        <div class="profile-header">
+            <h1>Professor Profile</h1>
+            <div class="professor-indicator">👨‍🏫 Professor</div>
+        </div>
+        <div class="name" id="fullName"></div>
+        <div class="email" id="email"></div>
+    </div>
+
+    <div class="footpanel4">
+        <div class="pages">
+            <a href="#">Conditions of Use</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Your Ads Privacy Choices</a>
+        </div>
+        <div class="copyright">© 2023 Indian Institute of Information Technology Raichur, Karnataka, India. All rights reserved.</div>
+    </div>
+
+    <script>
+        // Retrieve data from local storage
+        document.addEventListener("DOMContentLoaded", function() {
+            const fullName = localStorage.getItem('fullName');
+            const email = localStorage.getItem('email');
+
+            // Display the data in the respective divs
+            document.getElementById('fullName').textContent = fullName ? fullName : 'Name not found';
+            document.getElementById('email').textContent = email ? email : 'Email not found';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Professor Sign-Up</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="../../js/sign_up.js" defer></script>
+</head>
+<body>
+    <div class="logo">
+        <a href="../../index.html">
+            <img src="../../images/logo-blue-desktop.png"/>
+        </a>
+    </div>
+    <div class="Sign-up">
+        <h1 class="title">Professor Sign-up</h1>
+        <span class="msg" aria-live="polite">
+            <b><p class="msg-title">Signed up successfully!</p></b>
+            <p class="msg-hint">You can reset your password!</p>
+        </span>
+        
+        <!-- Step 1: User Information -->
+        <form id="signUpForm" action="">
+            <div id="user-info">
+                <div class="label">
+                    <label for="prefix">Prefix</label>
+                    <input type="text" name="prefix" id="prefix" placeholder="e.g., Dr., Mr., Ms.">
+                </div>
+                <div class="label">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" name="fullName" id="fullName" placeholder="Enter your full name">
+                </div>
+                <div class="label">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="label">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" name="mobile" id="mobile" placeholder="Enter your mobile number">
+                </div>
+                <div class="label">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter a password">
+                </div>
+                <button type="button" id="continue">Continue</button>
+            </div>
+            
+            <!-- Step 2: Course Selection -->
+             
+            <div id="course-selection" style="display:none;">
+                <input type="text" id="course-search" placeholder="Search courses">
+                <div id="courses-container"></div>
+                <button type="button" id="back">Back</button>
+                <button type="submit" id="final-submit">Sign Up</button>
+                
+            </div>
+
+        </form>
+        <p>Already registered?<a href="./sign_in.html">  Sign-in</a></p>
+    </div>
+</body>
+</html>

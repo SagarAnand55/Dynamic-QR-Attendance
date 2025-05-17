@@ -1,0 +1,154 @@
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../images/IIIT-Raichur-Transit-Campus.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: rgb(255, 255, 255, 1);
+}
+
+#user-info, #course-selection {
+    display: flex;
+    flex-direction: column;
+}
+
+#course-search {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#courses-container {
+    margin: 10px 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.logo{
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    cursor: pointer;
+}
+.logo img{
+    max-height: 80px;
+    width: auto;
+}
+.sign-in{
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color:rgb(107, 155, 179);
+    width: 450px;
+    margin: auto;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    opacity: 75%;
+}
+.Sign-up{
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color:rgb(107, 155, 179);
+    width: 600px;
+    margin: auto;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    opacity: 75%;
+}
+.Forgot_pass{
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color:rgb(107, 155, 179);
+    width: 450px;
+    margin: auto;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    opacity: 75%;
+}
+.msg{
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8); /* A light background to make text readable */
+    color: black; /* Set the text color to black for contrast */
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 400px; /* Optional: Set a max width */
+}
+.msg.show {
+    display: block; /* When the 'show' class is added, the message becomes visible */
+    transition: opacity 0.5s ease-in-out; /* Optional: Smooth transition effect */
+    opacity: 1;
+}
+.msg-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+}
+.label{
+    border: 2px solid white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px 0px;
+    min-height: 60px;
+}
+.label label{
+    font-size: 20px;
+}
+.label input{
+    font-size: 18px;
+    font-weight: bold;
+}
+button{
+    background-color:rgb(0, 128, 128);
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    opacity:1;
+    cursor: pointer;
+}
+.forgot-pass{
+    text-align: center;
+    font-size: 18px;
+}
+.remember{
+    display: flex;
+}
+.remember input{
+    width: 18px;
+    margin-right: 5px;
+}
